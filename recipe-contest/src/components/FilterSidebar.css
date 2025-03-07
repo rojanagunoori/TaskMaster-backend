@@ -1,0 +1,17 @@
+.filter-sidebar {
+    width: 200px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 5px;
+  }
+  
+  .filter-sidebar h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .filter-sidebar label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  

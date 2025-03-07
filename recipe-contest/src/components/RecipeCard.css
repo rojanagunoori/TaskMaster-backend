@@ -1,0 +1,99 @@
+/* Recipe Cards Grid */
+.recipes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+  }
+  
+  /* Recipe Card Styling */
+  .recipe-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    padding: 15px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-in-out forwards;
+    cursor: pointer;
+  }
+  
+  /* Card Hover Effect */
+  .recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Recipe Image */
+  .recipe-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: brightness(0.9);
+    border-radius: 12px 12px 0 0;
+  }
+  
+  /* Image Hover Effect */
+  .recipe-card:hover .recipe-image {
+    transform: scale(1.05);
+    filter: brightness(1);
+  }
+  
+  /* Recipe Title */
+  h3 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+    margin: 12px 0 8px;
+    transition: color 0.3s ease;
+  }
+  
+  .recipe-card:hover h3 {
+    color: #ff6f61;
+  }
+  
+  /* Recipe Details */
+  p {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 5px 0;
+  }
+  
+  /* Rating & Upload Date */
+  p:nth-child(4), p:nth-child(5) {
+    font-weight: bold;
+    color: #444;
+  }
+  
+  /* Meal Type & Dish Type */
+  p:nth-child(6) {
+    font-size: 0.9rem;
+    color: #ff6f61;
+    font-weight: bold;
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .recipes-container {
+      grid-template-columns: repeat(2, minmax(280px, 1fr));
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .recipes-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  

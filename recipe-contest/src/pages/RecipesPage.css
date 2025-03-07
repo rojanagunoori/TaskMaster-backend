@@ -1,0 +1,92 @@
+/* 🌟 General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* 📌 Page Title */
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* 🔍 Filters & Search Container */
+  .filters-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+  
+  /* 🔍 Search Bar */
+  .filters-container input {
+    width: 280px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .filters-container input:focus {
+    border-color: #ff6f61;
+    outline: none;
+  }
+  
+  /* ⏳ Sorting & Filtering Dropdowns */
+  .filters-container select {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    background: #fff;
+    transition: border-color 0.3s ease;
+  }
+  
+  .filters-container select:hover {
+    border-color: #ff6f61;
+  }
+  
+  /* 📝 Recipe Cards Container */
+  .recipes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  /* 📜 No Recipes Message */
+  .no-recipes {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  /* 📱 Responsive Design */
+  @media (max-width: 1024px) {
+    .filters-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .filters-container input, 
+    .filters-container select {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .recipes-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
