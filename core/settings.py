@@ -10,7 +10,15 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
-from pathlib import Path
+from pathlib import Path\
+
+import os
+from dotenv import load_dotenv
+
+
+# Load environment variables from .env file if you use one
+load_dotenv()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -102,11 +110,11 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'taskmaster_db',
-        'USER': 'postgres',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
-        'PORT': '5432',
+       'NAME': os.getenv('DB_NAME', 'your_db_name'),
+        'USER': os.getenv('DB_USER', 'your_db_user'),
+        'PASSWORD': os.getenv('DB_PASSWORD', 'your_db_password'),
+        'HOST': os.getenv('DB_HOST', 'your_db_host'),  # Use the database host from Render
+        'PORT': os.getenv('DB_PORT', '5432'),  # Default PostgreSQL port
     }
 }
 
