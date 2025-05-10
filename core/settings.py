@@ -55,10 +55,15 @@ MIDDLEWARE = [
 ]
 CORS_ALLOW_ALL_ORIGINS = True  # for dev only
 
-CORS_ALLOWED_ORIGINS = [
-    "https://taskmaster19.netlify.app/",
+#CORS_ALLOWED_ORIGINS = [
+   # "https://taskmaster19.netlify.app/",
    # "http://localhost:5173",  # Your Vue.js frontend URL
+#]
+
+CORS_ALLOWED_ORIGINS = [
+    "https://taskmaster19.netlify.app",  # Corrected URL without the trailing slash
 ]
+
 
 
 REST_FRAMEWORK = {
